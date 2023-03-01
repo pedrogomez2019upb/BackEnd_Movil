@@ -73,7 +73,7 @@ router.patch('/update/:id', async (req, res) => {
 })
 
 //update product by id
-router.patch('/update/:id', async (req, res) => {
+router.patch('/updateProduct/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const updateData = req.body;
