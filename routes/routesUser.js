@@ -71,6 +71,28 @@ router.patch('/update/:id', async (req, res) => {
 
     }
 })
+
+//update product by id
+router.patch('/update/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const updateData = req.body;
+        //const options = { new: true };
+/*
+        const result = await Model.findByIdAndUpdate(
+            id, updateData, options
+        )
+        */
+        const result = Model.findOneAndUpdate(id,updateData);
+        res.send(result);
+    }
+    catch (error) {
+        res.status(400).json({
+            message: error.message
+        })
+
+    }
+})
 //Post Method
 router.post('/post', async (req, res) => {
     const data = new Model({
