@@ -77,13 +77,13 @@ router.patch('/updateProduct/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const updateData = req.body;
-        //const options = { new: true };
+        const options = { new: true };
 /*
         const result = await Model.findByIdAndUpdate(
             id, updateData, options
         )
         */
-        const result = Model.findOneAndUpdate(id,updateData);
+        const result = await Model.findOneAndUpdate(id,updateData,options);
         res.send(result);
     }
     catch (error) {
