@@ -33,11 +33,11 @@ database.once('connected',()=>{
 
 //Importacion rutas
 //const routes=require('./routes/routes');
-const routesArticles=require('./routes/routesArticles');
+//const routesArticles=require('./routes/routesArticles');
 const routesUser=require('./routes/routesUser');
 //const routesJWT=require('./routes/routesJWT');
 //const routes=require('./view/view');
-app.use('/articles',routesArticles);
+//app.use('/articles',routesArticles);
 app.use('/user',routesUser);
 //app.use('/login',routesJWT);
 

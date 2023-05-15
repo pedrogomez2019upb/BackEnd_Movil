@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const dataSchema=new mongoose.Schema({
-    user:{
+    email:{
         required:true,
         type:String
     },
@@ -9,10 +9,25 @@ const dataSchema=new mongoose.Schema({
         required:true,
         type:String
     },
-    favorites:{
+    foto:{
+        required:true,
+        type:String
+    },
+    nombreCompleto:{
+        required:true,
+        type:String
+    },
+    numeroTelefonico:{
+        required:true,
+        type:String
+    },
+    cargo:{
+        required:true,
+        type:String
+    },
+    fcm:{
         required:true,
         type:String
     },
 })
-
 module.exports=mongoose.model('Data2',dataSchema);

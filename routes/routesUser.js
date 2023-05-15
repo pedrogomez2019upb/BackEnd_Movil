@@ -96,14 +96,25 @@ router.patch('/updateProduct/:id', async (req, res) => {
 //Post Method
 router.post('/post', async (req, res) => {
     const data = new Model({
-        user: req.body.user,
+        email: req.body.email,
         password: req.body.password,
-        favorites: req.body.favorites
+        foto: req.body.foto,
+        nombreCompleto:req.body.nombreCompleto,
+        numeroTelefonico:req.body.numeroTelefonico,
+        cargo:req.body.cargo,
+        fcm: req.body.fcm 
     })
+/*
+    const listItem = new ListItem({
+        fcm: req.body.fcm,
+      });
+      */
 
     try {
         const dataToSave = await data.save();
+        //const fcmSave = await listItem.save();
         res.status(200).json(dataToSave);
+        //res.status(200).json(fcmSave);
 
     }
     catch (error) {
